@@ -9,13 +9,13 @@ const RABBITMQ_URL = "amqps://elquqmxe:9-0kzbFH3Z5_oRQEz3mfS08UVTLokB5d@hawk.rmq
 export async function userEvents() {
     const connection = await amqp.connect(RABBITMQ_URL);
     try {
-        const connection = await amqp.connect({
+      /*   const connection = await amqp.connect({
             protocol: 'amqp',
             hostname: process.env.RABBIT_HOST,
             port:5672,
             username: process.env.RABBITMQ_USER,
             password:process.env.RABBIT_PASS,
-            });
+            }); */
         const channel = await connection.createChannel();
 
         const exchange = 'user_event';
